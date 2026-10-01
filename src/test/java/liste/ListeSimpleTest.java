@@ -220,7 +220,7 @@ class ListeSimpleTest {
         listeATester.inverser();
         assertEquals("ListeSimple(Noeud(1), Noeud(2), Noeud(3), Noeud(4))", listeATester.toString());
     }
-
+//dummy comment
     @Test
     public void inverserListeNbImPairDElements() {
         listeATester.ajout(1);
