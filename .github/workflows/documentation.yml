@@ -24,7 +24,7 @@ jobs:
           java-version: '21'
 
       - name: Generate Javadoc
-        run: mvn -B javadoc:javadoc -DoutputDirectory=target/site/apidocs
+        run: mvn -B javadoc:javadoc
 
       - name: Verify generated documentation
         run: test -f target/site/apidocs/index.html
