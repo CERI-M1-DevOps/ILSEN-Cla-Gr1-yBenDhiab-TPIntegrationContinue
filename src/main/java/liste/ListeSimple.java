@@ -4,15 +4,27 @@ public class ListeSimple {
     private long size;
     Noeud tete;
 
+    /**
+     * Retourne la taille de la liste.
+     * @return la taille de la liste
+     */
     public long getSize() {
         return size;
     }
 
+    /**
+     * Ajoute un élément à la tête de la liste.
+     * @param element
+     */
     public void ajout(int element) {
         tete = new Noeud(element, tete);
         size++;
     }
-
+    /**
+     * Modifie le premier élément de la liste qui a la valeur donnée.
+     * @param element l'élément à modifier
+     * @param nouvelleValeur la nouvelle valeur à affecter à l'élément
+     */
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
@@ -21,6 +33,11 @@ public class ListeSimple {
             courant.setElement(nouvelleValeur);
     }
 
+    /**
+     * Modifie tous les éléments de la liste qui ont la valeur donnée.
+     * @param element l'élément à modifier
+     * @param nouvelleValeur la nouvelle valeur à affecter à l'élément
+     */
     public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null) {
@@ -29,7 +46,6 @@ public class ListeSimple {
             courant = courant.getSuivant();
         }
     }
-
     public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
         Noeud n = tete;
@@ -43,6 +59,10 @@ public class ListeSimple {
         return sb.toString();
     }
 
+    /**
+     * Supprime le premier élément de la liste qui a la valeur donnée.
+     * @param element l'élément à supprimer
+     */
     public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
@@ -105,7 +125,11 @@ public class ListeSimple {
         }
         tete = precedent;
     }
-
+    /**
+     * Retourne le nœud précédent celui passé en paramètre.
+     * @param r le nœud dont on veut trouver le précédent
+     * @return le nœud précédent r, ou null si r est le premier nœud de la liste
+     */
     public Noeud getPrecedent(Noeud r) {
     // la liste n'est pas vide puisqu'on transmet un Node de la liste et le Node existe obligatoirement
         Noeud precedent = tete;
